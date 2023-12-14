@@ -8,5 +8,4 @@ require('dotenv').config();
  
 
 
-const PORT =  process.env.PORT || 8000; // a porta que você mencionou
-app.listen(PORT, () => console.log(`Servidor rodando OK!${PORT}`));
+app.listen( () => console.log(`Servidor rodando OK!`));
