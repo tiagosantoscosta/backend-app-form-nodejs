@@ -20,3 +20,20 @@ const connection = require('../models/connection');
     }
 };
 
+
+exports.listUser = async (req, res) => {
+    console.log('testeee');
+    try {
+        // Busque os dados da tabela users
+        const [rows, fields] = await connection.query(
+            'SELECT * FROM users'
+        );
+
+        // Envie os dados como resposta
+        res.json(rows);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Ocorreu um erro ao buscar os usuários.');
+    }
+};
+
